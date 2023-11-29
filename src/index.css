@@ -1,13 +1,127 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.input-light{
+    @apply absolute flex w-80 bg-white h-10 top-24 left-4 rounded-md border-none md:left-40   
+}
+.input-dark{
+    @apply absolute flex w-80 h-10 top-24 left-4 rounded-md border-none md:left-40 
+}
+.input-dark{
+    background-color: rgb(16, 16, 58);
+}
+.App{
+    width: 24rem;
+    height: 690px;
+    border-radius: 10px;
+}
+.click{
+    position: absolute;
+    left: 259px;
+    color: rgb(192, 186, 186);
+    font-size: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 60px;
+}
+.img{
+    width: 460px;
+}
+.img1{
+    display: none;
+}
+.bg-light{
+    width: 24rem;
+    height: 690px;
+    background: white;
+}
+.bg-dark{
+    width: 24rem;
+    height: 690px;
+     background: rgb(16, 16, 58);
+}
+.dark-input{
+    position: absolute;
+    padding: 10px;
+    width: 293px;
+    height: 40px;
+    left: 26px;
+    border-radius: 7px;
+    background: rgb(16, 16, 58);
+}
+.light-input{
+    position: absolute;
+    padding: 10px;
+    width: 293px;
+    height: 40px;
+    left: 26px;
+    border-radius: 7px;
+    background: white;
+}
+.checkbox{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 5px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(212, 205, 205);
+}
+.checkbox1{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 5px;
+    border-radius: 10px;
+    background: hsl(234, 41%, 18%);
+    border: 1px solid rgb(84, 46, 133);
+}
+.inactive{
+    position: relative;
+    top: 4px;
+    left: 4px;
+    display: none;
+}
+.active{
+    position: relative;
+    top: 4px;
+    left: 4px;
+    display: block;
+}
+@media screen and (min-width: 680px) {
+    .App{
+       position: relative;
+        width: 60rem;
+        top: 5px;
+        left: 200px
+    }
+    .click{
+        left: 520px;
+    }
+    .img{
+        display: none;
+    }
+    .img1{
+        width: 60rem;
+        height: 13rem;
+        display: block;
+    }
+    .bg-light{
+        width: 60rem;
+    }
+    .bg-dark{
+        width: 60rem;
+    }
+    .dark-input{
+        width: 35rem;
+        left: 26px;
+    }
+    .light-input{
+        width: 35rem;
+        left: 26px;
+    }
 }
