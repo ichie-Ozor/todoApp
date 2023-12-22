@@ -1,53 +1,56 @@
 import React, { useState } from 'react'
 import check from './images/icon-check.svg'
 
-function TodoInput({props}) {
+function TodoInput({day}) {
    const [todo, setTodo] = useState('')
    const [ischeck, setIscheck ] = useState(false)
    const [todoList, setTodoList ] = useState([])
 
 const onClickHandler = (e) => {
-    e.preventDefault()
     if(todo !== ""){
-    setTodoList((prev) =>{
-      return [...prev, todo]
-      // return [...prev, {todo: e.target.value}]
-    })
-  } else {
-    return
+      setTodoList((prev) => [...prev, todo])
+      setTodo('')
   }
-    setTodo('')
-  // setTodoList(...todo, todo)
  }
- console.log(todoList)
-const checkHandler = (e) => {
-  e.preventDefault()
-  if(!ischeck){
-    setIscheck(true)
-  } else {
-    setIscheck(false)
-  }
-}
-console.log(todoList)
+// console.log(todoList)
+const checkHandler = () => setIscheck(!ischeck)
+
+
 const render = todoList.map((todoItem, index) => {
   console.log(todoItem)
-  return <div className={props ? 'input-light' : 'input-dark'} key={index}>{todoItem}</div>
-  
+  return (
+  <div 
+  className={day ? 'input-light1' : 'input-dark1'} 
+  key={`${todoItem}_${index}`}
+  >
+    <p className='input-light'>
+    {todoItem}
+    </p>
+  </div>
+  )
 })
-console.log(render, "render")
+// console.log(render, "render")
   return (
     <div>
-        <div className={props ? 'input-light' : 'input-dark'}>
-          <div className={props? 'checkbox' : 'checkbox1'} onClick={checkHandler}>
+        <div className={day ? 'input-light' : 'input-dark'}>
+          <div className={day? 'checkbox' : 'checkbox1'} onClick={checkHandler}>
             <img src={check} alt='' className={ischeck ? 'active' : 'inactive'} />
           </div>
-          <input type='text' placeholder='Create a new todo' 
-          className={props? 'light-input' : 'dark-input'} 
-          name='todo' value={todo} 
+
+          <input 
+          type='text' 
+          placeholder='Create a new todo' 
+          className={day? 'light-input' : 'dark-input'} 
+          name='todo'
+          value={todo} 
           onChange={(e) => setTodo(e.target.value)} 
           />
-          <button onClick={onClickHandler} className='click'>click</button>
+
+          <button onClick={onClickHandler} className='click'>
+            click
+          </button>
         </div>
+
         <div className='render'>{render}</div>
     </div>
   )

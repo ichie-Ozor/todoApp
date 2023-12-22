@@ -9,8 +9,16 @@
 .input-dark{
     @apply absolute flex w-80 h-10 top-24 left-4 rounded-md border-none md:left-40 
 }
-.input-dark{
-    background-color: rgb(16, 16, 58);
+.input-light1{
+    background: red;
+}
+.render{
+    position: relative;
+}
+.input-dark1{
+    background: green;
+    position: relative;
+    top: 200px;
 }
 .App{
     width: 24rem;
