@@ -20,7 +20,7 @@ const render = todoList.map((todoItem, index) => {
   console.log(todoItem)
   return (
   <div 
-  className={day ? 'input-light1' : 'input-dark1'} 
+  className={day ? 'input-light' : 'input-dark'} 
   key={`${todoItem}_${index}`}
   >
     <p className='input-light'>

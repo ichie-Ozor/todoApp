@@ -4,10 +4,10 @@
 
 
 .input-light{
-    @apply absolute flex w-80 bg-white h-10 top-24 left-4 rounded-md border-none md:left-40   
+    @apply  flex w-80 bg-white h-10 top-24 left-4 rounded-md border-none md:left-40   
 }
 .input-dark{
-    @apply absolute flex w-80 h-10 top-24 left-4 rounded-md border-none md:left-40 
+    @apply flex w-80 h-10 top-24 left-4 rounded-md border-none md:left-40 
 }
 .input-light1{
     background: red;
